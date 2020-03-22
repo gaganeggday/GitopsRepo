@@ -7,7 +7,7 @@ rules:
 - apiGroups:
   - ""
   resources:
-  - namespace
+  - namespaces
   verbs:
   - patch
 - apiGroups:
