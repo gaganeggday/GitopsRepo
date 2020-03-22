@@ -1,0 +1,14 @@
+resources:
+- 01-namespaces/chetan-cicd-environment.yaml
+- 02-rolebindings/chetan-pipeline-service-role-binding.yaml
+- 02-rolebindings/chetan-pipeline-service-role.yaml
+- 03-tasks/chetan-deploy-from-source-task.yaml
+- 04-pipelines/chetan-cd-deploy-from-push-pipeline.yaml
+- 04-pipelines/chetan-ci-dryrun-from-pr-pipeline.yaml
+- 05-bindings/chetan-github-pr-binding.yaml
+- 05-bindings/chetan-github-push-binding.yaml
+- 06-templates/chetan-cd-deploy-from-push-template.yaml
+- 06-templates/chetan-ci-dryrun-from-pr-template.yaml
+- 07-eventlisteners/chetan-cicd-event-listener.yaml
+- 08-routes/chetan-github-webhook-event-listener.yaml
+---
