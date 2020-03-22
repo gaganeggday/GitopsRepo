@@ -14,12 +14,12 @@ spec:
         filter: (header.match('X-GitHub-Event', 'pull_request') && body.action ==
           'opened' || body.action == 'synchronize') && body.pull_request.head.repo.full_name
           == 'chetan-rns/gitops'
-    - github:
-        eventTypes:
-        - pull_request
-        secretRef:
-          secretKey: webhook-secret-key
-          secretName: github-webhook-secret
+    # - github:
+    #     eventTypes:
+    #     - pull_request
+    #     secretRef:
+    #       secretKey: webhook-secret-key
+    #       secretName: github-webhook-secret
     name: ci-dryrun-from-pr
     template:
       name: ci-dryrun-from-pr-template
@@ -29,12 +29,12 @@ spec:
     - cel:
         filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name
           == 'chetan-rns/gitops') && body.ref.startsWith('refs/heads/master')
-    - github:
-        eventTypes:
-        - push
-        secretRef:
-          secretKey: webhook-secret-key
-          secretName: github-webhook-secret
+    # - github:
+    #     eventTypes:
+    #     - push
+    #     secretRef:
+    #       secretKey: webhook-secret-key
+    #       secretName: github-webhook-secret
     name: cd-deploy-from-push
     template:
       name: cd-deploy-from-push-template
