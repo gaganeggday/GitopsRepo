@@ -20,7 +20,7 @@ spec:
         secretRef:
           secretKey: webhook-secret-key
           secretName: github-webhook-secret
-    name: stage-ci-dryrun-from-pr
+    name: ci-dryrun-from-pr
     template:
       name: ci-dryrun-from-pr-template
   - bindings:
@@ -35,7 +35,7 @@ spec:
         secretRef:
           secretKey: webhook-secret-key
           secretName: github-webhook-secret
-    name: stage-cd-deploy-from-push
+    name: cd-deploy-from-push
     template:
       name: cd-deploy-from-push-template
 status:

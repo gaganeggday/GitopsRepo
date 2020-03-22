@@ -1,7 +1,7 @@
 resources:
 - 01-namespaces/chetan-cicd-environment.yaml
-- 02-rolebindings/chetan-pipeline-service-role-binding.yaml
 - 02-rolebindings/chetan-pipeline-service-role.yaml
+- 02-rolebindings/chetan-pipeline-service-rolebinding.yaml
 - 03-tasks/chetan-deploy-from-source-task.yaml
 - 04-pipelines/chetan-cd-deploy-from-push-pipeline.yaml
 - 04-pipelines/chetan-ci-dryrun-from-pr-pipeline.yaml
