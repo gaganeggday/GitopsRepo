@@ -3,7 +3,6 @@ kind: ClusterRole
 metadata:
   creationTimestamp: null
   name: pipelines-clusterrole
-  namespace: chetan-cicd-environment
 rules:
 - apiGroups:
   - ""
