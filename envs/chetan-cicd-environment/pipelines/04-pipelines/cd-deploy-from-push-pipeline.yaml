@@ -1,40 +1,23 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
 metadata:
-  name: dev-cd-pipeline
+  creationTimestamp: null
+  name: cd-deploy-from-push-pipeline
   namespace: chetan-cicd-environment
 spec:
   resources:
-    - name: source-repo
-      type: git
-    - name: runtime-image
-      type: image
+  - name: source-repo
+    type: git
   tasks:
-    - name: build-image
-      taskRef:
-        name: buildah
-      resources:
-        inputs:
-          - name: source
-            resource: source-repo
-        outputs:
-          - name: image
-            resource: runtime-image
-    - name: deploy-image
-      runAfter:
-        - build-image
-      taskRef:
-        name: deploy-using-kubectl-task
-      resources:
-        inputs:
-          - name: source
-            resource: source-repo
-          - name: image
-            resource: runtime-image
-      params:
-      - name: PATHTODEPLOYMENT
-        value: DEPLOYMENT_PATH
-      - name: YAMLPATHTOIMAGE
-        value: "spec.template.spec.containers[0].image"
-      - name: NAMESPACE
-        value: chetan-dev-environment
+  - name: apply-source
+    params:
+    - name: NAMESPACE
+      value: cicd-environment
+    resources:
+      inputs:
+      - name: source
+        resource: source-repo
+    taskRef:
+      kind: Task
+      name: deploy-from-source-task
+---
