@@ -7,7 +7,7 @@ metadata:
 spec:
   inputs:
     params:
-    - default: "."
+    - default: envs/chetan-cicd-environment/base
       description: Path to the manifest to apply
       name: PATHTODEPLOYMENT
       type: string
@@ -18,19 +18,16 @@ spec:
       description: If true run a server-side dryrun.
       name: DRYRUN
       type: string
-    - default: "true"
-      description: Apply resources recursively
-      name: RECURSIVE
-      type: string
     resources:
     - name: source
       type: git
   steps:
   - args:
     - apply
-    - -R
     - --dry-run=$(inputs.params.DRYRUN)
-    - -f
+    - -n
+    - $(inputs.params.NAMESPACE)
+    - -k
     - $(inputs.params.PATHTODEPLOYMENT)
     command:
     - kubectl
