@@ -8,4 +8,3 @@ patchesJson6902:
     kind: EventListener
     name: cicd-event-listener
   path: eventlistener_patch.yaml
-  # path: ../overlays/eventlistener_patch.yaml # fix problem here

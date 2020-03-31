@@ -1,5 +1,5 @@
 bases:
-  - ../../../../envs/chetan-cicd-environment/pipelines/
+  - ../../../../envs/chetan-cicd-environment/overlays/
 
 resources:
   - secret.yaml
