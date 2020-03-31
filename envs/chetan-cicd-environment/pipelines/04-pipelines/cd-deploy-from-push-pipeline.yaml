@@ -12,7 +12,7 @@ spec:
   - name: apply-source
     params:
     - name: NAMESPACE
-      value: chetan-cicd-environment
+      value: cicd-environment
     resources:
       inputs:
       - name: source
