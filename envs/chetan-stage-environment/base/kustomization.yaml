@@ -1,0 +1,6 @@
+bases:
+  - ../../../apps/app-1/overlays
+
+resources:
+  - stage-environment.yaml
+  - pipeline-edit-binding.yaml

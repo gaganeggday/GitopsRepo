@@ -7,7 +7,7 @@ metadata:
 spec:
   inputs:
     params:
-    - default: envs/chetan-cicd-environment/pipelines
+    - default: envs/chetan-cicd-environment/base
       description: Path to the manifest to apply
       name: PATHTODEPLOYMENT
       type: string
