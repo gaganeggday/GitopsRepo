@@ -3,3 +3,4 @@ bases:
 
 resources:
   - secret.yaml
+  - serviceaccount.yaml
